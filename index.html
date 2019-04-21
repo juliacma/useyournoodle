@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Use Your Noodle</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<style>
+body {
+	background-color: black;
+	font-family: Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1.2;
+	text-align: center;
+}
+
+p {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+	background-color: silver;
+}
+
+b, strong {
+	font-weight: 600;
+}
+
+i, em, h2 {
+	font-style: italic;
+}
+
+h1, h2, h3 {
+	font-family: Arial, sans-serif;
+	font-weight: normal;
+	margin: 0;
+	margin-top: 1em;
+}
+
+h1 {
+	margin: 1em;
+}
+
+form {
+	text-align: center;
+}
+
+/*CONTAINERS*/
+.main-container {
+	width: calc(110vh + 4px);
+	height: calc(90vh + 6px);
+	margin: 5vh auto;
+	background-color: white;
+	align-items: center;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: auto auto auto;
+	/*grid-auto-flow: row;*/
+	border: 1px solid black;
+}
+
+.menu-container {
+	width: 65vh;
+	height: calc(65vh + 2px);
+	margin: 0;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+}
+
+.input-container {
+	width: 45vh;
+	height: 20vh;
+	margin: 0;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tangram {
+	width: 45vh;
+	height: 45vh;
+	margin: 0;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	border: 1px solid black;
+}
+
+.bank-container {
+	width: calc(110vh + 2px);
+	height: 25vh;
+	margin: 0;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	border: 1px solid black;
+}
+
+.menu-scroll {
+	overflow: auto;
+	height: 60vh;
+	width: 100%;
+	padding: 0 10vh;
+}
+
+.bank-scroll {
+	height: 25vh;
+	overflow: auto;
+	width: calc(110vh + 2px);
+	position: absolute;
+	/*display: flex;
+	flex-direction: row;
+	align-items: center;*/
+}
+
+/*TANGRAM*/
+.tangram {
+	position: absolute;
+	right: calc(50vw - 55vh - 2px);
+	top: calc(25vh + 3px);
+}
+
+.tangram div {
+	position: absolute;
+	margin: 0.5vh;
+}
+
+.scroll div {
+	margin: 1vh;
+}
+
+#big-triangle-one {
+	width: 0;
+	height: 0;
+	border-bottom: 21vh solid black;
+	border-right: 21vh solid transparent;
+	border-left: 21vh solid transparent;
+	bottom: 0.5vh;
+    right: 1vh;
+}
+
+#big-triangle-two {
+	width: 0;
+	height: 0;
+	border-bottom: 21vh solid transparent;
+	border-top: 21vh solid transparent;
+	border-left: 21vh solid black;
+	bottom: 1vh;
+    left: 0.5vh;
+}
+
+#med-triangle {
+	width: 0;
+	height: 0;
+	border-top: 21vh solid black;
+	border-left: 21vh solid transparent;
+	top: 0.5vh;
+    right: 0.5vh;
+}
+
+#small-triangle-one {
+	width: 0;
+	height: 0;
+	border-top: 10vh solid black;
+	border-left: 10vh solid transparent;
+	border-right: 10vh solid transparent;
+	top: 0.5vh;
+    left: 1.5vh;
+}
+
+#small-triangle-two {
+	width: 0;
+	height: 0;
+	border-right: 10vh solid black;
+	border-top: 10vh solid transparent;
+	border-bottom: 10vh solid transparent;
+	top: 12vh;
+    right: 11.2vh;
+}
+
+#square {
+	width: 0;
+	height: 0;
+	border: 10vh solid transparent;
+	border-bottom-color: black;
+	position: relative;
+	top: -8.75vh;
+	left: 12vh;
+}
+#square:after {
+	content: '';
+	position: absolute;
+	left: -10vh;
+	top: 10vh;
+	width: 0;
+	height: 0;
+	border: 10vh solid transparent;
+	border-top-color: black;
+}
+
+#parallelogram {
+    width: 9.75vh;
+    height: 20vh;
+    transform: skewY(45deg);
+    background: black;
+    right: .5vh;
+    bottom: 6.1vh;
+}
+
+.bank-scroll div {
+	position: absolute;
+}
+
+#b-big-triangle-one {
+	width: 0;
+	height: 0;
+	border-bottom: 21vh solid black;
+	border-right: 21vh solid transparent;
+	border-left: 21vh solid transparent;
+	left: 2vh;
+	top: 2vh;
+}
+
+#b-small-triangle-one {
+	width: 0;
+	height: 0;
+	border-top: 10vh solid black;
+	border-left: 10vh solid transparent;
+	border-right: 10vh solid transparent;
+	left: 30vh;
+	top: 5vh;
+}
+
+#b-small-triangle-two {
+	width: 0;
+	height: 0;
+	border-right: 10vh solid black;
+	border-top: 10vh solid transparent;
+	border-bottom: 10vh solid transparent;
+	left: 47vh;
+	top: 2vh;
+}
+
+#b-square {
+	width: 0;
+	height: 0;
+	border-bottom: 14.85vh solid black;
+	border-right: 14.85vh solid black;
+	/*width: 7.43vh;
+	height: 7.43vh;*/
+	left: 60vh;
+	top: 5vh;
+}
+
+#b-parallelogram {
+    height: 9.75vh;
+    width: 20vh;
+    transform: skew(45deg);
+    background: black;
+    left: 82vh;
+	top: 8vh;
+}
+
+#b-big-triangle-two {
+	width: 0;
+	height: 0;
+	border-top: 21vh solid black;
+	border-right: 21vh solid transparent;
+	border-left: 21vh solid transparent;
+	left: 95vh;
+	top: 2vh;
+}
+
+#b-med-triangle {
+	width: 0;
+	height: 0;
+	border-bottom: 14.85vh solid black;
+	border-right: 14.85vh solid transparent;
+	border-left: 14.85vh solid transparent;
+	left: 123vh;
+	top: 5vh;
+	margin-right: 10px;
+}
+
+	</style>
+
+</head>
+
+<body>
+	<div class="main-container">
+		<div class="menu-container">
+			<div class="menu-scroll">
+				<h1 id="date">Menu</h1>
+
+				<h2>Appetizers</h2>
+				<a href='puzzle1.html'>
+					<h3>Puzzle 1</h3>
+					<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</a>
+				<a href='puzzle2.html'>
+					<h3>Puzzle 2</h3>
+					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</a>
+
+				<h2>Mains</h2>
+				<a href='puzzle3.html'>
+					<h3>Puzzle 3</h3>
+					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</a>
+				<a href='puzzle4.html'>
+					<h3>Puzzle 4</h3>
+					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</a>
+				<a href='puzzle5.html'>
+					<h3>Puzzle 5</h3>
+					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</a>
+
+				<h2>Desserts</h2>
+				<a href='puzzle6.html'>
+					<h3>Puzzle 6</h3>
+					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</a>
+				<a href='puzzle7.html'>
+					<h3>Puzzle 7</h3>
+					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</a>
+			</div>
+		</div>
+		<div class="input-container">
+			<form action="/action_page.php">
+				Noodle:<br>
+				<input type="text" name="noodle" value="">
+				<br><br>
+				<input type="submit" value="Submit">
+			</form> 
+		</div>
+		<div class="tangram">
+			<div id="big-triangle-one"></div>
+			<div id="big-triangle-two"></div>
+			<div id="med-triangle"></div>
+			<div id="small-triangle-one"></div>
+			<div id="small-triangle-two"></div>
+			<div id="square"></div>
+			<div id="parallelogram"></div>
+		</div>
+		<div class="bank-container">
+			<div class="bank-scroll">
+				<div id="b-small-triangle-one"></div>
+				<div id="b-square"></div>
+				<div id="b-big-triangle-one"></div>
+				<div id="b-parallelogram"></div>
+				<div id="b-med-triangle"></div>
+				<div id="b-big-triangle-two"></div>
+				<div id="b-small-triangle-two"></div>			
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<script>
+		$(function(){
+
+			var today = new Date();
+			var dd = today.getDate();
+
+			var mm = today.getMonth()+1; 
+			var yyyy = today.getFullYear();
+			if(dd<10) 
+			{
+			    dd='0'+dd;
+			} 
+
+			if(mm<10) 
+			{
+			    mm='0'+mm;
+			} 
+
+			today = mm+'/'+dd+'/'+yyyy;
+			console.log(today);
+			$('#date').html('Menu for '+today);
+		});
+	</script>
+
+</body>
+
+</html>
