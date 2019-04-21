@@ -58,7 +58,7 @@ form {
 .main-container {
 	width: calc(110vh + 4px);
 	height: calc(90vh + 6px);
-	margin: 5vh auto;
+	margin: 4.5vh auto 0;
 	background-color: white;
 	align-items: center;
 	display: grid;
@@ -125,10 +125,11 @@ form {
 }
 
 .bank-scroll {
-	height: 25vh;
+	height: calc(25vh - 2px);
 	overflow: auto;
-	width: calc(110vh + 2px);
+	width: calc(110vh - 2px);
 	position: absolute;
+	border: 2px solid white;
 	/*display: flex;
 	flex-direction: row;
 	align-items: center;*/
@@ -138,7 +139,7 @@ form {
 .tangram {
 	position: absolute;
 	right: calc(50vw - 55vh - 2px);
-	top: calc(25vh + 3px);
+	top: calc(25vh - 1px);
 }
 
 .tangram div {
@@ -153,7 +154,7 @@ form {
 #big-triangle-one {
 	width: 0;
 	height: 0;
-	border-bottom: 21vh solid black;
+	border-bottom: 21vh solid #efefef;
 	border-right: 21vh solid transparent;
 	border-left: 21vh solid transparent;
 	bottom: 0.5vh;
@@ -165,7 +166,7 @@ form {
 	height: 0;
 	border-bottom: 21vh solid transparent;
 	border-top: 21vh solid transparent;
-	border-left: 21vh solid black;
+	border-left: 21vh solid #efefef;
 	bottom: 1vh;
     left: 0.5vh;
 }
@@ -173,7 +174,7 @@ form {
 #med-triangle {
 	width: 0;
 	height: 0;
-	border-top: 21vh solid black;
+	border-top: 21vh solid #efefef;
 	border-left: 21vh solid transparent;
 	top: 0.5vh;
     right: 0.5vh;
@@ -182,7 +183,7 @@ form {
 #small-triangle-one {
 	width: 0;
 	height: 0;
-	border-top: 10vh solid black;
+	border-top: 10vh solid #efefef;
 	border-left: 10vh solid transparent;
 	border-right: 10vh solid transparent;
 	top: 0.5vh;
@@ -192,7 +193,7 @@ form {
 #small-triangle-two {
 	width: 0;
 	height: 0;
-	border-right: 10vh solid black;
+	border-right: 10vh solid #efefef;
 	border-top: 10vh solid transparent;
 	border-bottom: 10vh solid transparent;
 	top: 12vh;
@@ -203,7 +204,7 @@ form {
 	width: 0;
 	height: 0;
 	border: 10vh solid transparent;
-	border-bottom-color: black;
+	border-bottom-color: #efefef;
 	position: relative;
 	top: -8.75vh;
 	left: 12vh;
@@ -216,14 +217,14 @@ form {
 	width: 0;
 	height: 0;
 	border: 10vh solid transparent;
-	border-top-color: black;
+	border-top-color: #efefef;
 }
 
 #parallelogram {
     width: 9.75vh;
     height: 20vh;
     transform: skewY(45deg);
-    background: black;
+    background: #efefef;
     right: .5vh;
     bottom: 6.1vh;
 }
@@ -350,8 +351,8 @@ form {
 		</div>
 		<div class="input-container">
 			<form action="/action_page.php">
-				Noodle:<br>
-				<input type="text" name="noodle" value="">
+				Secret Recipe:<br>
+				<input type="text" name="password" value="">
 				<br><br>
 				<input type="submit" value="Submit">
 			</form> 
