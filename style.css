@@ -93,6 +93,10 @@ span {
 	background-color: #ffd147;
 }
 
+.recipe-scroll p, .recipe-scroll a {
+	padding: 0 1em;
+}
+
 /*CONTAINERS*/
 .main-container {
 	width: calc(110vh + 4px);

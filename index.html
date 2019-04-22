@@ -10,9 +10,7 @@
 
 	<style>
 
-.recipe-scroll p, .recipe-scroll a {
-	padding: 0 1em;
-}
+
 /*CONTAINERS*/
 
 .menu-container {
@@ -158,7 +156,8 @@
 #t6 {
 	width: 0;
 	height: 0;
-	border-top: 21vh solid #ffd147;
+	border-top: 21vh solid;
+	border-top-color: #ffd147;
 	border-left: 21vh solid transparent;
 	top: 0.5vh;
     right: 0.5vh;
@@ -170,7 +169,8 @@
 	height: 0;
 	border-bottom: 21vh solid transparent;
 	border-top: 21vh solid transparent;
-	border-left: 21vh solid #ffd147;
+	border-left: 21vh solid;
+	border-left-color: #ffd147;
 	bottom: 1vh;
     left: 0.5vh;
 }
@@ -339,22 +339,22 @@
 					<p class="description">Literally "cheese and pepper", this minimalist cacio e pepe is like a stripped-down mac and cheese.</p>
 				</a>
 				<a href='puzzle4.html' class="menu-item" id="a4" target="_blank">
-					<h3>Tonkotsu Ramen</h3>
-					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h3>Thai Peanut Chicken Ramen</h3>
+					<p class="description">All made in one pot, using healthy, pantry staple, ingredients. It's creamy, spicy, filled with veggies, lean chicken, and ramen noodles.</p>
 				</a>
 				<a href='puzzle5.html' class="menu-item" id="a5" target="_blank">
-					<h3>Dan Dan Noodles</h3>
-					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h3>Adam's Mac n' Cheese Chili</h3>
+					<p class="description">Adam invented this over the summer because he indulges himself.</p>
 				</a>
 
 				<h2>Desserts</h2>
 				<a href='puzzle6.html' class="menu-item" id="a6" target="_blank">
-					<h3>Noodle Pudding</h3>
-					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h3>Noodle Kugel</h3>
+					<p class="description">Kugel is a baked noodle pudding. It's a traditional Ashkenazi Jewish dish, often served on Shabbat and Yom Tov.</p>
 				</a>
 				<a href='puzzle7.html' class="menu-item" id="a7" target="_blank">
-					<h3>Bing Fen</h3>
-					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h3>Falooda</h3>
+					<p class="description">Falooda is a cold dessert with origins in the Indian subcontinent. Traditionally it is made from mixing rose syrup, vermicelli, sweet basil seeds with milk, often served with ice cream.</p>
 				</a>
 			</div>
 		</div>
@@ -462,27 +462,29 @@
 			c3 = 1;
 			console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
-		if (text == "final") {
+		if (text == "cremini") {
 			$('#b4').css("border-right-color", "#ffd147");
 			$('#t4').css("border-right-color", "#0E2CB3");
+			$('#b4').css("border-bottom-color", "#ffd147");
+			$('#t4').css("border-bottom-color", "#0E2CB3");
 			c4 = 1;
 			console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
-		if (text == "final") {
-			$('#b5').css("border-right-color", "#ffd147");
-			$('#t5').css("border-right-color", "#0E2CB3");
+		if (text == "seasoning") {
+			$('#b5').css("background", "#ffd147");
+			$('#t5').css("background", "#0E2CB3");
 			c5 = 1;
 			console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
-		if (text == "final") {
-			$('#b6').css("border-right-color", "#ffd147");
-			$('#t6').css("border-right-color", "#0E2CB3");
+		if (text == "cinnamon") {
+			$('#b6').css("border-top-color", "#ffd147");
+			$('#t6').css("border-top-color", "#0E2CB3");
 			c6 = 1;
 			console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
-		if (text == "final") {
-			$('#b7').css("border-right-color", "#ffd147");
-			$('#t7').css("border-right-color", "#0E2CB3");
+		if (text == "vermicelli") {
+			$('#b7').css("border-bottom-color", "#ffd147");
+			$('#t7').css("border-left-color", "#0E2CB3");
 			c7 = 1;
 			console.log(c1+c2+c3+c4+c5+c6+c7)
 		}

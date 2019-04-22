@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Cold Sesame Noodles</title>
+	<title>Adam's Mac n' Cheese Chili</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -21,9 +21,17 @@ p {
 	margin-bottom: 8px;
 }
 
+.hang {
+	text-indent: -1.1em;
+}
+
+.hang:first-of-type {
+	text-indent: -1.1em;
+}
+
 /*CONTENT*/
 
-#s2 {
+#s5 {
 	display: none;
 }
 
@@ -32,33 +40,36 @@ p {
 </head>
 
 <body>
-	<div class="solved" id="s2">
+	<div class="solved" id="s5">
 		<div class="recipe-scroll">
-			<a href="https://www.twopeasandtheirpod.com/sesame-noodles/"><h1 class="recipe-name">Noodle Pudding</h1></a>
+			<h1 class="recipe-name">Adam's Mac n' Cheese Chili</h1>
 			<div class="flex">
 				<div class="ingredients">
 					<h3> Ingredients:</h3>
-					<p>10 ounces udon noodles can use soba or spaghetti</p>
-					<p>3 tablespoons toasted sesame oil</p>
-					<p>1/4 cup tamari or lite soy sauce</p>
-					<p>1/4 cup seasoned rice <span>vinegar</span></p>
-					<p>3 tablespoons peanut butter</p>
-					<p>2 tablespoons light brown sugar</p>
-					<p>1 tablespoon minced fresh ginger</p>
-					<p>Half a garlic clove</p>
-					<p>2 teaspoons sriracha plus more to taste</p>
-					<p>Toppings: chopped roasted peanuts thinly sliced scallions, sesame seeds</p>
+					<p>1 box of mac n' cheese (plus milk, butter)</p>
+					<p>can of beans, black or red (precooked ones, unless you know how to cook beans)</p>
+					<p>lots of <span>seasoning</span></p>
+					<p>ground turkey</p>
+					<p>1 onion</p>
+					<p>1 pepper</p>
+					<p>some good hot sauce</p>
+					<p>oil</p>
+					<p>maybe a tomato </p>
 				</div>
 				<div class="steps">
 					<h3> Directions:</h3>
 					<ol>
-						<li>Bring a large pot of heavily salted water to a boil over high heat. Add the noodles and cook according to the package directions. Drain and rinse with cold water. Transfer noodles to a large bowl.</li>
-
-						<li>Meanwhile, in a blender or food processor, combine the sesame oil, tamari, vinegar, peanut butter, brown sugar, ginger, garlic, and sriracha. Blend until smooth. Add more sriracha, to taste, if desired.</li>
-
-						<li>Add the sauce to the pot with the noodles. Toss to coat; taste and adjust seasoning. Top each serving with peanuts, scallions, and sesame seeds.</li>
+						<li>Follow directions on box to make Mac n' Cheese. Make it.</li>
+						<p>While you’re doing that:</p>
+						<li>Cut up some onions, throw them in a pan on low heat with some oil</li>
+						<li>Put ground turkey in and season it with some spices, be fun</li>
+						<p class="hang">3.5. Throw little pieces of pepper into the pan at some point. Also some hot sauce if you want extra credit.</p>
+						<li>Once the turkey is almost done cooking, add in your beans. Pre-made beans come with some juice, but if there isn’t enough for your desired texture, add in some tomato sauce if you have it or some tomato.</li>
+						<li>Season the turkey bean mixture more.</li>
+						<li>Be done with the mac and cheese around now.</li>
+						<li>Serve in a bowl with mac and cheese on bottom, chili on top, hot sauce dressed.</li>
+						<p>yum</p>
 					</ol>
-						<p>Note-use gluten-free noodles and gluten-free tamari to make it gluten-free.</p>
 				</div>
 			</div>
 		</div>
@@ -274,7 +285,7 @@ $(function(){
 			setTimeout(function() {
                 if (match(grid, solution))
 				{
-					$('#s2').css('display', 'block');
+					$('#s5').css('display', 'block');
 				}
             },
             500);
