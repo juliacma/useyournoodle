@@ -6,67 +6,14 @@
 	<title>Use Your Noodle</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<style>
-body {
-	background-color: black;
-	font-family: Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 16px;
-	line-height: 1.2;
-	text-align: center;
-}
 
-p {
-	margin-top: 0;
+.recipe-scroll p, .recipe-scroll a {
+	padding: 0 1em;
 }
-
-a {
-	text-decoration: none;
-	color: black;
-}
-
-a:hover{
-	background-color: silver;
-}
-
-b, strong {
-	font-weight: 600;
-}
-
-i, em, h2 {
-	font-style: italic;
-}
-
-h1, h2, h3 {
-	font-family: Arial, sans-serif;
-	font-weight: normal;
-	margin: 0;
-	margin-top: 1em;
-}
-
-h1 {
-	margin: 1em;
-}
-
-form {
-	text-align: center;
-}
-
 /*CONTAINERS*/
-.main-container {
-	width: calc(110vh + 4px);
-	height: calc(90vh + 6px);
-	margin: 4.5vh auto 0;
-	background-color: white;
-	align-items: center;
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-template-rows: auto auto auto;
-	/*grid-auto-flow: row;*/
-	border: 1px solid black;
-}
 
 .menu-container {
 	width: 65vh;
@@ -76,7 +23,7 @@ form {
 	grid-row-end: 3;
 	grid-column-start: 1;
 	grid-column-end: 2;
-	border: 1px solid black;
+	border: 1px solid #ffd147;
 	display: flex;
 	align-items: center;
 }
@@ -89,8 +36,10 @@ form {
 	grid-row-end: 2;
 	grid-column-start: 2;
 	grid-column-end: 3;
-	border: 1px solid black;
+	border: 1px solid #ffd147;
+	text-align: center;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
@@ -103,7 +52,7 @@ form {
 	grid-row-end: 3;
 	grid-column-start: 2;
 	grid-column-end: 3;
-	border: 1px solid black;
+	border: 1px solid #ffd147;
 }
 
 .bank-container {
@@ -114,18 +63,18 @@ form {
 	grid-row-end: 4;
 	grid-column-start: 1;
 	grid-column-end: 4;
-	border: 1px solid black;
+	border: 1px solid #ffd147;
 }
 
 .menu-scroll {
 	overflow: auto;
 	height: 60vh;
 	width: 100%;
-	padding: 0 10vh;
+	padding: 0 5vh;
 }
 
 .bank-scroll {
-	height: calc(25vh - 2px);
+	height: calc(25vh - 4px);
 	overflow: auto;
 	width: calc(110vh - 2px);
 	position: absolute;
@@ -138,7 +87,7 @@ form {
 /*TANGRAM*/
 .tangram {
 	position: absolute;
-	right: calc(50vw - 55vh - 2px);
+	left: calc(50vw + 10vh);
 	top: calc(25vh - 1px);
 }
 
@@ -147,161 +96,220 @@ form {
 	margin: 0.5vh;
 }
 
-.scroll div {
-	margin: 1vh;
-}
-
-#big-triangle-one {
+/*big triangle*/
+#t1 {
 	width: 0;
 	height: 0;
-	border-bottom: 21vh solid #efefef;
+	border-bottom: 21vh solid #ffd147;
 	border-right: 21vh solid transparent;
 	border-left: 21vh solid transparent;
 	bottom: 0.5vh;
-    right: 1vh;
+    right: 0.7vh;
 }
 
-#big-triangle-two {
+/*small triangle*/
+#t2 {
 	width: 0;
 	height: 0;
-	border-bottom: 21vh solid transparent;
-	border-top: 21vh solid transparent;
-	border-left: 21vh solid #efefef;
-	bottom: 1vh;
-    left: 0.5vh;
-}
-
-#med-triangle {
-	width: 0;
-	height: 0;
-	border-top: 21vh solid #efefef;
-	border-left: 21vh solid transparent;
-	top: 0.5vh;
-    right: 0.5vh;
-}
-
-#small-triangle-one {
-	width: 0;
-	height: 0;
-	border-top: 10vh solid #efefef;
+	border-top: 10vh solid #ffd147;
 	border-left: 10vh solid transparent;
 	border-right: 10vh solid transparent;
 	top: 0.5vh;
     left: 1.5vh;
 }
 
-#small-triangle-two {
+/*small triangle*/
+#t3 {
 	width: 0;
 	height: 0;
-	border-right: 10vh solid #efefef;
+	border-right: 10vh solid #ffd147;
 	border-top: 10vh solid transparent;
 	border-bottom: 10vh solid transparent;
 	top: 12vh;
     right: 11.2vh;
 }
 
-#square {
+/*square*/
+#t4 {
 	width: 0;
 	height: 0;
-	border: 10vh solid transparent;
-	border-bottom-color: #efefef;
-	position: relative;
-	top: -8.75vh;
-	left: 12vh;
-}
-#square:after {
-	content: '';
-	position: absolute;
-	left: -10vh;
-	top: 10vh;
-	width: 0;
-	height: 0;
-	border: 10vh solid transparent;
-	border-top-color: #efefef;
+	border-bottom: 14.2vh solid;
+	border-bottom-color: #ffd147;
+	border-right: 14.2vh solid;
+	border-right-color: #ffd147;
+	/*width: 7.43vh;
+	height: 7.43vh;*/
+	left: 15vh;
+	top: 4.2vh;
+	transform: rotate(45deg);
 }
 
-#parallelogram {
+/*parallelogram*/
+#t5 {
     width: 9.75vh;
     height: 20vh;
     transform: skewY(45deg);
-    background: #efefef;
+    background: #ffd147;
     right: .5vh;
     bottom: 6.1vh;
+}
+
+/*medium triangle*/
+#t6 {
+	width: 0;
+	height: 0;
+	border-top: 21vh solid #ffd147;
+	border-left: 21vh solid transparent;
+	top: 0.5vh;
+    right: 0.5vh;
+}
+
+/*big triangle*/
+#t7 {
+	width: 0;
+	height: 0;
+	border-bottom: 21vh solid transparent;
+	border-top: 21vh solid transparent;
+	border-left: 21vh solid #ffd147;
+	bottom: 1vh;
+    left: 0.5vh;
 }
 
 .bank-scroll div {
 	position: absolute;
 }
 
-#b-big-triangle-one {
+/*big triangle*/
+#b1 {
 	width: 0;
 	height: 0;
-	border-bottom: 21vh solid black;
+	border-bottom: 21vh solid;
+	border-bottom-color: #0E2CB3;
 	border-right: 21vh solid transparent;
 	border-left: 21vh solid transparent;
 	left: 2vh;
 	top: 2vh;
 }
 
-#b-small-triangle-one {
+/*small triangle*/
+#b2 {
 	width: 0;
 	height: 0;
-	border-top: 10vh solid black;
+	border-top: 10vh solid;
+	border-top-color: #0E2CB3;
 	border-left: 10vh solid transparent;
 	border-right: 10vh solid transparent;
 	left: 30vh;
 	top: 5vh;
 }
 
-#b-small-triangle-two {
+/*small triangle*/
+#b3 {
 	width: 0;
 	height: 0;
-	border-right: 10vh solid black;
+	border-right: 10vh solid;
+	border-right-color: #0E2CB3;
 	border-top: 10vh solid transparent;
 	border-bottom: 10vh solid transparent;
 	left: 47vh;
 	top: 2vh;
 }
 
-#b-square {
+/*square*/
+#b4{
 	width: 0;
 	height: 0;
-	border-bottom: 14.85vh solid black;
-	border-right: 14.85vh solid black;
+	border-bottom: 14.85vh solid;
+	border-bottom-color: #0E2CB3;
+	border-right: 14.85vh solid;
+	border-right-color: #0E2CB3;
 	/*width: 7.43vh;
 	height: 7.43vh;*/
 	left: 60vh;
 	top: 5vh;
 }
 
-#b-parallelogram {
+/*parallelogram*/
+#b5 {
     height: 9.75vh;
     width: 20vh;
     transform: skew(45deg);
-    background: black;
+    background: #0E2CB3;
     left: 82vh;
 	top: 8vh;
 }
 
-#b-big-triangle-two {
+/*big triangle*/
+#b6 {
 	width: 0;
 	height: 0;
-	border-top: 21vh solid black;
+	border-top: 21vh solid;
+	border-top-color: #0E2CB3;
 	border-right: 21vh solid transparent;
 	border-left: 21vh solid transparent;
 	left: 95vh;
 	top: 2vh;
 }
 
-#b-med-triangle {
+/*medium triangle*/
+#b7 {
 	width: 0;
 	height: 0;
-	border-bottom: 14.85vh solid black;
+	border-bottom: 14.85vh solid;
+	border-bottom-color: #0E2CB3;
 	border-right: 14.85vh solid transparent;
 	border-left: 14.85vh solid transparent;
 	left: 123vh;
 	top: 5vh;
 	margin-right: 10px;
+}
+
+/*FORM*/
+
+.form-title {
+	font-size: 20px;
+	font-size: calc(2vh + 4px);
+	margin: 0;
+	margin-bottom: 0.5em;
+}
+
+.form-box {
+	width: 75%;
+	padding: 0 10px;
+	text-align: center;
+	font-family: 'blitzscript', Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 30px;
+	font-size: calc(2.8vh + 5.6px);
+	color: #0E2CB3;
+	border: 1px solid #0E2CB3;
+}
+
+.hide {
+	display: none;
+}
+
+.button {
+	background-color: white;
+	border: 1px solid #0E2CB3;
+	padding: 0.4em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-family: Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 14px;
+	font-size: calc(1.5vh + 3px);
+	color: #0E2CB3;
+	margin-top: 0.4em;
+	cursor: pointer;
+	z-index: 3;
+}
+
+#sfinal {
+	display: none;
 }
 
 	</style>
@@ -312,102 +320,257 @@ form {
 	<div class="main-container">
 		<div class="menu-container">
 			<div class="menu-scroll">
-				<h1 id="date">Menu</h1>
+				<br>
+				<h1 id="date">Menu of the Week</h1>
 
 				<h2>Appetizers</h2>
-				<a href='puzzle1.html'>
-					<h3>Puzzle 1</h3>
-					<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<a href='puzzle1.html' class="menu-item" id="a1" target="_blank">
+					<h3>Cold Sesame Noodles</h3>
+					<p class="description">Sesame noodles with an amazing asian peanut sauce, topped with peanuts, scallions, and sesame seeds.</p>
 				</a>
-				<a href='puzzle2.html'>
-					<h3>Puzzle 2</h3>
-					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<a href='puzzle2.html' class="menu-item" id="a2" target="_blank">
+					<h3>Mini Lasagna Bites</h3>
+					<p class="description">Cheesy, saucy, addictive one-bite mini lasagna rolls ups, here and waiting for you.</p>
 				</a>
 
 				<h2>Mains</h2>
-				<a href='puzzle3.html'>
-					<h3>Puzzle 3</h3>
+				<a href='puzzle3.html' class="menu-item" id="a3" target="_blank">
+					<h3>Cacio e Pepe</h3>
+					<p class="description">Literally "cheese and pepper", this minimalist cacio e pepe is like a stripped-down mac and cheese.</p>
+				</a>
+				<a href='puzzle4.html' class="menu-item" id="a4" target="_blank">
+					<h3>Tonkotsu Ramen</h3>
 					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</a>
-				<a href='puzzle4.html'>
-					<h3>Puzzle 4</h3>
-					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</a>
-				<a href='puzzle5.html'>
-					<h3>Puzzle 5</h3>
+				<a href='puzzle5.html' class="menu-item" id="a5" target="_blank">
+					<h3>Dan Dan Noodles</h3>
 					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</a>
 
 				<h2>Desserts</h2>
-				<a href='puzzle6.html'>
-					<h3>Puzzle 6</h3>
+				<a href='puzzle6.html' class="menu-item" id="a6" target="_blank">
+					<h3>Noodle Pudding</h3>
 					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</a>
-				<a href='puzzle7.html'>
-					<h3>Puzzle 7</h3>
+				<a href='puzzle7.html' class="menu-item" id="a7" target="_blank">
+					<h3>Bing Fen</h3>
 					<p class="description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</a>
 			</div>
 		</div>
 		<div class="input-container">
-			<form action="/action_page.php">
-				Secret Recipe:<br>
-				<input type="text" name="password" value="">
-				<br><br>
-				<input type="submit" value="Submit">
-			</form> 
+			<form id="form" onsubmit="passwordSubmit(); return false;">
+				<h2 class="form-title">Secret Recipe:</h2>
+				<input type="text" name="password" value="" class="form-box" autocomplete="off">
+				<input type="button" onclick="passwordSubmit()" value="Check" class="button">
+			</form>
+			
 		</div>
 		<div class="tangram">
-			<div id="big-triangle-one"></div>
-			<div id="big-triangle-two"></div>
-			<div id="med-triangle"></div>
-			<div id="small-triangle-one"></div>
-			<div id="small-triangle-two"></div>
-			<div id="square"></div>
-			<div id="parallelogram"></div>
+			<div id="t1"></div>
+			<div id="t2"></div>
+			<div id="t3"></div>
+			<div id="t4"></div>
+			<div id="t5"></div>
+			<div id="t6"></div>
+			<div id="t7"></div>	
 		</div>
 		<div class="bank-container">
 			<div class="bank-scroll">
-				<div id="b-small-triangle-one"></div>
-				<div id="b-square"></div>
-				<div id="b-big-triangle-one"></div>
-				<div id="b-parallelogram"></div>
-				<div id="b-med-triangle"></div>
-				<div id="b-big-triangle-two"></div>
-				<div id="b-small-triangle-two"></div>			
+				<div id="b1"></div>
+				<div id="b2"></div>
+				<div id="b3"></div>
+				<div id="b4"></div>
+				<div id="b5"></div>
+				<div id="b6"></div>
+				<div id="b7"></div>			
 			</div>
 		</div>
 	</div>
 
-	<div class="container">
-		
+	<div class="margins">
+		<div class="left">
+			<div class="crop1">
+				<div class="r1"></div>
+				<div class="r2"></div>
+				<div class="r3"></div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="crop1">
+				<div class="r1"></div>
+				<div class="r2"></div>
+				<div class="r3"></div>
+			</div>
+		</div>
+		<div class="top">
+			<div class="crop2">
+				<div class="r1"></div>
+				<div class="r2"></div>
+				<div class="r3"></div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="crop2">
+				<div class="r1"></div>
+				<div class="r2"></div>
+				<div class="r3"></div>
+			</div>
+		</div>
 	</div>
 
+	<div class="solved" id="sfinal">
+		<div class="recipe-scroll">
+			<h1 class="recipe-name">Congratulations!</h1></a>
+			<p>I hope you enjoyed your meal!</p>
+			<img/>
+			<p>Here is a reward for trying everything on the menu for Week 1. Come back every week for 6 weeks to complete the puzzle!</p>
+			<a href="about.html">Read more about the Use Your Noodle zine here.</a>
+			</div>
+		</div>
+	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
 	<script>
-		$(function(){
 
-			var today = new Date();
-			var dd = today.getDate();
+	var c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0;
+	//form submission
+	function passwordSubmit() {
+		var x = document.getElementById("form");
+		var text = x.elements[0].value;
+		console.log(text);
+		text = text.toLowerCase();
 
-			var mm = today.getMonth()+1; 
-			var yyyy = today.getFullYear();
-			if(dd<10) 
+		$(".form-box").val("");
+
+		if (text == "vinegar") {
+			$('#b1').css("border-bottom-color", "#ffd147");
+			$('#t1').css("border-bottom-color", "#0E2CB3");
+			c1 = 1;
+			console.log(c1+c2+c3+c4+c5+c6+c7)
+		}
+		if (text == "crosswise") {
+			$('#b2').css("border-top-color", "#ffd147");
+			$('#t2').css("border-top-color", "#0E2CB3");
+			c2 = 1;
+			console.log(c1+c2+c3+c4+c5+c6+c7)
+		}
+		if (text == "padano") {
+			$('#b3').css("border-right-color", "#ffd147");
+			$('#t3').css("border-right-color", "#0E2CB3");
+			c3 = 1;
+			console.log(c1+c2+c3+c4+c5+c6+c7)
+		}
+		if (text == "final") {
+			$('#b4').css("border-right-color", "#ffd147");
+			$('#t4').css("border-right-color", "#0E2CB3");
+			c4 = 1;
+			console.log(c1+c2+c3+c4+c5+c6+c7)
+		}
+		if (text == "final") {
+			$('#b5').css("border-right-color", "#ffd147");
+			$('#t5').css("border-right-color", "#0E2CB3");
+			c5 = 1;
+			console.log(c1+c2+c3+c4+c5+c6+c7)
+		}
+		if (text == "final") {
+			$('#b6').css("border-right-color", "#ffd147");
+			$('#t6').css("border-right-color", "#0E2CB3");
+			c6 = 1;
+			console.log(c1+c2+c3+c4+c5+c6+c7)
+		}
+		if (text == "final") {
+			$('#b7').css("border-right-color", "#ffd147");
+			$('#t7').css("border-right-color", "#0E2CB3");
+			c7 = 1;
+			console.log(c1+c2+c3+c4+c5+c6+c7)
+		}
+
+		setTimeout(function() {
+            if (c1+c2+c3+c4+c5+c6+c7 == 7)
 			{
-			    dd='0'+dd;
-			} 
+				$('#sfinal').css('display', 'block');
+			}
+        },
+       	500);
+	}
 
-			if(mm<10) 
-			{
-			    mm='0'+mm;
-			} 
+	$(function(){
+		//tangram bank starts with middle scroll
+		$('.bank-scroll').scrollLeft(200);
+	});
 
-			today = mm+'/'+dd+'/'+yyyy;
-			console.log(today);
-			$('#date').html('Menu for '+today);
-		});
+
+// $(function(){
+	// var today = new Date();
+	// var dd = today.getDate();
+
+	// var mm = today.getMonth()+1; 
+	// var yyyy = today.getFullYear();
+	// if(dd<10) 
+	// {
+	//     dd='0'+dd;
+	// } 
+
+	// if(mm<10) 
+	// {
+	//     mm='0'+mm;
+	// } 
+
+	// today = mm+'/'+dd+'/'+yyyy;
+	// console.log(today);
+	// $('#date').html('Menu for '+today);
+
+	
+
+	//doesn't work rn
+	// $('.menu-item').each(function(index) {
+	// 	$('#a' + index).hover(
+	// 		function(){
+	// 			console.log(index);
+	// 			if($('#b' + index).css("border-right-color") == "#0E2CB3") {
+	// 				console.log('right');
+	// 				$('#b' + index).css("border-right-color", "#ffd147");
+	// 			}
+	// 			if($('#b' + index).css("border-left-color") == "#0E2CB3") {
+	// 				console.log('left');
+	// 				$('#b' + index).css("border-left-color", "#ffd147");
+	// 			}
+	// 			if($('#b' + index).css("border-top-color") == "#0E2CB3") {
+	// 				console.log('top');
+	// 				$('#b' + index).css("border-top-color", "#ffd147");
+	// 			}
+	// 			if($('#b' + index).css("border-bottom-color") == "#0E2CB3") {
+	// 				console.log('bottom');
+	// 				$('#b' + index).css("border-bottom-color", "#ffd147");
+	// 			}
+	// 			if($('#b' + index).css("background") == "#0E2CB3") {
+	// 				console.log('background');
+	// 				$('#b' + index).css("background", "#ffd147");
+	// 			}
+				
+	// 		},
+	// 		function(){
+	// 			console.log(index + " 2");
+	// 			if($('#b' + index).css("border-right-color") == "#ffd147") {
+	// 				$('#b' + index).css("border-right-color", "#0E2CB3");
+	// 			}
+	// 			if($('#b' + index).css("border-left-color") == "#ffd147") {
+	// 				$('#b' + index).css("border-left-color", "#0E2CB3");
+	// 			}
+	// 			if($('#b' + index).css("border-top-color") == "#ffd147") {
+	// 				$('#b' + index).css("border-top-color", "#0E2CB3");
+	// 			}
+	// 			if($('#b' + index).css("border-bottom-color") == "#ffd147") {
+	// 				$('#b' + index).css("border-bottom-color", "#0E2CB3");
+	// 			}
+	// 			if($('#b' + index).css("background") == "#ffd147") {
+	// 				$('#b' + index).css("background", "#0E2CB3");
+	// 			}
+	// 	});
+	// });
+// });
 	</script>
 
 </body>

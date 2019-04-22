@@ -1,0 +1,334 @@
+/*FONTS*/
+
+@font-face {
+    font-family: "blitzscript";
+    src: url('fonts/blitz_script-webfont.otf') format('otf'),
+    	 url('fonts/blitz_script-webfont.woff2') format('woff2'),
+         url('fonts/blitz_script-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "blitzscript_outline";
+    src: url('fonts/blitz_script_outline-webfont.otf') format('otf'),
+    	 url('fonts/blitz_script_outline-webfont.woff2') format('woff2'),
+         url('fonts/blitz_script_outline-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: white;
+	font-family: Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16px;
+	font-size: calc(1.5vh + 6px);
+	line-height: 1.2;
+	text-align: left;
+	color: #0E2CB3;
+}
+
+p {
+	margin-top: 0;
+	/*color: #0E2CB3;*/
+}
+
+a, a:after {
+	text-decoration: none;
+	color: #0E2CB3;
+}
+
+a:hover{
+	font-style: italic;
+	color: #ffd147!important;
+}
+
+b, strong {
+	font-weight: 600;
+}
+
+i, em, h2 {
+	font-style: italic;
+}
+
+h1 {
+	font-family: 'blitzscript', Arial, sans-serif;
+	font-weight: normal;
+	font-size: 3em;
+	margin: 0;
+	/*margin-top: 0.5em;*/
+	line-height: 0.8;
+	/*color: #0E2CB3;*/
+}
+
+h2 {
+	font-family: Arial, sans-serif;
+	font-weight: normal;
+	font-size: 1.5em;
+	margin: 0;
+	margin-top: 1em;
+	line-height: 0.8;
+	/*color: #0E2CB3;*/
+}
+
+h3 {
+	font-family: 'blitzscript', Arial, sans-serif;
+	font-weight: normal;
+	font-size: 2em;
+	margin: 0;
+	margin-top: 0.5em;
+	/*color: #0E2CB3;*/
+}
+
+span {
+	background-color: #ffd147;
+}
+
+/*CONTAINERS*/
+.main-container {
+	width: calc(110vh + 4px);
+	height: calc(90vh + 6px);
+	margin: 4.5vh auto 0;
+	background-color: white;
+	align-items: center;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: auto auto auto;
+	/*grid-auto-flow: row;*/
+	border: 1px solid #ffd147;
+}
+
+.recipe-scroll {
+	overflow: auto;
+	height: 85vh;
+	width: 100%;
+}
+
+/*BORDERS*/
+
+.left{
+	height: calc(95vh + 2px);
+	width: calc(50vw - 55vh - 4px);
+	position: absolute;
+	right: calc(50vw + 55vh + 2px); 
+	bottom: calc(5vh - 4px);
+	border: 1px solid #ffd147;
+}
+
+.right {
+	height: calc(95vh + 2px);
+	width: calc(50vw - 55vh - 4px);
+	position: absolute;
+	left: calc(50vw + 55vh + 2px); 
+	top: calc(5vh - 4px);
+	border: 1px solid #ffd147;
+}
+
+.top {
+	height: calc(5vh - 4px);
+	width: calc(50vw + 55vh + 0px);
+	position: absolute;
+	left: calc(50vw - 55vh - 2px); 
+	bottom: calc(95vh + 2px);
+	border: 1px solid #ffd147;
+}
+
+.bottom {
+	height: calc(5vh - 4px);
+	width: calc(50vw + 55vh + 0px);
+	position: absolute;
+	right: calc(50vw - 55vh - 2px); 
+	top: calc(95vh + 2px);
+	border: 1px solid #ffd147;
+}
+
+.crop1 {
+	height: calc(95vh + 2px);
+	width: calc(50vw - 55vh - 4px);
+	position: relative;
+	overflow: hidden;
+}
+
+.crop2 {
+	height: calc(5vh - 4px);
+	width: calc(50vw + 55vh + 0px);
+	position: relative;
+	overflow: hidden;
+}
+
+.r1 {
+	height: 300px;
+	width: 150px;
+	position: absolute;
+	border: 2px solid #ffd147;
+	left: -2px;
+	top: -2px;
+}
+
+.r2 {
+	height: 100px;
+	width: 400px;
+	position: absolute;
+	top: 300px;
+	left:150px;
+	border: 2px solid #ffd147;
+}
+
+.r3 {
+	height: 500px;
+	width: 1000px;
+	position: absolute;
+	top: 402px;
+	left:-2px;
+	border: 2px solid #ffd147;
+}
+
+/*PUZZLE*/
+
+.puzzle-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #ffd147;;
+	width: calc(110vh + 2px);
+	height: calc(90vh + 4px);
+	margin: 4.5vh auto 0;
+}
+
+.grid {
+	width: 80vh;
+	height: 80vh;
+	margin: auto;
+	border: 1px solid #ffd147;
+	background-color: white;
+	display: grid;
+}
+
+.grid.five {
+	grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 3fr 1fr 1fr 1fr 1fr 1fr;
+	font-size: 2em;
+}
+
+.grid.ten {
+	grid-template-columns: 4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	font-size: 1.5em;
+
+}
+
+.grid.fifteen {
+	grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.top-numbers, .left-numbers, .empty {
+	border: 1px solid #ffd147;
+	margin: 0;
+	padding: .2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.empty {
+	height: calc(100% - .4em);
+	font-size: 16px;
+	font-size: calc(1.5vh + 6px);
+	/*not selectable: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.top-numbers {
+	align-items: flex-end;
+	/*not selectable: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.left-numbers {
+	justify-content: flex-end;
+	word-spacing: .3em;
+	/*not selectable: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.element {
+	border: 1px solid #ffd147;
+/*	height: 20%;
+	width: 20%;*/
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/*not selectable: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.solved {
+	width: calc(110vh  - 38px);
+	height: calc(90vh - 36px);
+	position: absolute;
+	left: calc(50vw - 55vh - 3px);
+	top: calc(5vh - 4px);
+	margin: 0;
+	padding: 20px;
+	background-color: white;
+	border: 2px solid #ffd147;
+}
+
+.flex {
+	display: flex;
+}
+
+.recipe-name {
+	padding: 10px;
+}
+
+.ingredients {
+	flex: 2;
+	padding: 10px;
+}
+
+.steps {
+	flex: 3;
+	padding: 10px;
+}
+
+
+
