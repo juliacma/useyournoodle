@@ -139,10 +139,10 @@ li {
 
 #sfinal {
 	display: none;
-	width: calc(110vh + 2px);
+	width: calc(110vh - 38px);
 	height: calc(90vh + 4px);
 	margin: 0 auto;
-	padding: 0;
+	padding: 0 20px;
 	background-color: white;
 	position: absolute;
 	left: calc(50vw - 55vh - 3px);
