@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>tangram</title>
+  <g id="t1">
+    <polygon class="cls-1" points="29.19 985.5 500.98 515.13 970.88 985.5 29.19 985.5"/>
+  </g>
+  <g id="t2">
+    <polygon class="cls-1" points="514.15 500.5 737.5 277.37 737.5 723.62 514.15 500.5"/>
+  </g>
+  <g id="t3">
+    <rect class="cls-1" x="335.08" y="88.32" width="329.84" height="329.84" transform="translate(-32.71 427.46) rotate(-44.97)"/>
+  </g>
+  <g id="t4">
+    <polygon class="cls-1" points="29.16 15.5 475.84 15.5 252.5 238.62 29.16 15.5"/>
+  </g>
+  <g id="t5">
+    <polygon class="cls-1" points="757.5 743.37 757.5 276.61 985.5 504.38 985.5 971.6 757.5 743.37"/>
+  </g>
+  <g id="t6">
+    <polygon class="cls-1" points="15.5 30.15 486.35 501.47 15.5 970.91 15.5 30.15"/>
+  </g>
+  <g id="t7">
+    <polygon class="cls-1" points="524.66 15.5 985.5 15.5 985.5 475.88 524.66 15.5"/>
+  </g>
+</svg>

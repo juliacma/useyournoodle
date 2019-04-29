@@ -7,23 +7,30 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
-
+	<link rel="icon" 
+	      type="image/png" 
+	      href="icon.png">
 	<style>
 
 
 /*CONTAINERS*/
 
-.menu-container {
+.menu-container, .puzzle-frame, .about-container {
 	width: 65vh;
 	height: calc(65vh + 2px);
 	margin: 0;
 	grid-row-start: 1;
 	grid-row-end: 3;
 	grid-column-start: 1;
-	grid-column-end: 2;
+	grid-column-end: 3;
 	border: 1px solid #ffd147;
 	display: flex;
 	align-items: center;
+	background-color: white;
+}
+
+.puzzle-frame, .about-container{
+	display: none;
 }
 
 .input-container {
@@ -32,8 +39,8 @@
 	margin: 0;
 	grid-row-start: 1;
 	grid-row-end: 2;
-	grid-column-start: 2;
-	grid-column-end: 3;
+	grid-column-start: 3;
+	grid-column-end: 4;
 	border: 1px solid #ffd147;
 	text-align: center;
 	display: flex;
@@ -48,33 +55,61 @@
 	margin: 0;
 	grid-row-start: 2;
 	grid-row-end: 3;
-	grid-column-start: 2;
-	grid-column-end: 3;
+	grid-column-start: 3;
+	grid-column-end: 4;
 	border: 1px solid #ffd147;
+	background-color: white
 }
 
 .bank-container {
-	width: calc(110vh + 2px);
+	width: calc(99vh + 2px);
 	height: 25vh;
 	margin: 0;
 	grid-row-start: 3;
-	grid-row-end: 4;
-	grid-column-start: 1;
+	grid-row-end: 5;
+	grid-column-start: 2;
 	grid-column-end: 4;
 	border: 1px solid #ffd147;
 }
 
+#back-button, #about-button {
+	width: calc(100% - 2px);
+	height: calc(6.5vh - 1px);
+	margin: 0;
+	padding: 3vh 0;
+	border: 1px solid #ffd147;
+	display: flex;
+	/*align-items: center;*/
+	justify-content: center;
+	cursor: pointer;
+	font-size: 2em;
+}
+
+#back-button {
+	grid-row-start: 3;
+	grid-row-end: 4;
+	grid-column-start: 1;
+	grid-column-end: 2;
+}
+
+#about-button {
+	grid-row-start: 4;
+	grid-row-end: 5;
+	grid-column-start: 1;
+	grid-column-end: 2;
+}
+
 .menu-scroll {
 	overflow: auto;
-	height: 60vh;
-	width: 100%;
+	height: 65vh;
+	width: calc(100% - 10vh);
 	padding: 0 5vh;
 }
 
 .bank-scroll {
 	height: calc(25vh - 4px);
 	overflow: auto;
-	width: calc(110vh - 2px);
+	width: calc(99vh - 2px);
 	position: absolute;
 	border: 2px solid white;
 	/*display: flex;
@@ -83,185 +118,27 @@
 }
 
 /*TANGRAM*/
-.tangram {
-	position: absolute;
-	left: calc(50vw + 10vh);
-	top: calc(25vh - 1px);
+
+.tangram-poly {
+    fill: none;
+    stroke: #ffd147;
+    stroke-width: 1px;
+    stroke-miterlimit: 10;
 }
 
-.tangram div {
-	position: absolute;
-	margin: 0.5vh;
-}
-
-/*big triangle*/
-#t1 {
-	width: 0;
-	height: 0;
-	border-bottom: 21vh solid #ffd147;
-	border-right: 21vh solid transparent;
-	border-left: 21vh solid transparent;
-	bottom: 0.5vh;
-    right: 0.7vh;
-}
-
-/*small triangle*/
-#t2 {
-	width: 0;
-	height: 0;
-	border-top: 10vh solid #ffd147;
-	border-left: 10vh solid transparent;
-	border-right: 10vh solid transparent;
-	top: 0.5vh;
-    left: 1.5vh;
-}
-
-/*small triangle*/
-#t3 {
-	width: 0;
-	height: 0;
-	border-right: 10vh solid #ffd147;
-	border-top: 10vh solid transparent;
-	border-bottom: 10vh solid transparent;
-	top: 12vh;
-    right: 11.2vh;
-}
-
-/*square*/
-#t4 {
-	width: 0;
-	height: 0;
-	border-bottom: 14.2vh solid;
-	border-bottom-color: #ffd147;
-	border-right: 14.2vh solid;
-	border-right-color: #ffd147;
-	/*width: 7.43vh;
-	height: 7.43vh;*/
-	left: 15vh;
-	top: 4.2vh;
-	transform: rotate(45deg);
-}
-
-/*parallelogram*/
-#t5 {
-    width: 9.75vh;
-    height: 20vh;
-    transform: skewY(45deg);
-    background: #ffd147;
-    right: .5vh;
-    bottom: 6.1vh;
-}
-
-/*medium triangle*/
-#t6 {
-	width: 0;
-	height: 0;
-	border-top: 21vh solid;
-	border-top-color: #ffd147;
-	border-left: 21vh solid transparent;
-	top: 0.5vh;
-    right: 0.5vh;
-}
-
-/*big triangle*/
-#t7 {
-	width: 0;
-	height: 0;
-	border-bottom: 21vh solid transparent;
-	border-top: 21vh solid transparent;
-	border-left: 21vh solid;
-	border-left-color: #ffd147;
-	bottom: 1vh;
-    left: 0.5vh;
+.bank-poly, #b1 {
+    fill: #0E2CB3;
+    stroke: #0E2CB3;
+    stroke-miterlimit: 10;
 }
 
 .bank-scroll div {
 	position: absolute;
 }
 
-/*big triangle*/
-#b1 {
-	width: 0;
-	height: 0;
-	border-bottom: 21vh solid;
-	border-bottom-color: #0E2CB3;
-	border-right: 21vh solid transparent;
-	border-left: 21vh solid transparent;
-	left: 2vh;
-	top: 2vh;
-}
-
-/*small triangle*/
-#b2 {
-	width: 0;
-	height: 0;
-	border-top: 10vh solid;
-	border-top-color: #0E2CB3;
-	border-left: 10vh solid transparent;
-	border-right: 10vh solid transparent;
-	left: 30vh;
-	top: 5vh;
-}
-
-/*small triangle*/
-#b3 {
-	width: 0;
-	height: 0;
-	border-right: 10vh solid;
-	border-right-color: #0E2CB3;
-	border-top: 10vh solid transparent;
-	border-bottom: 10vh solid transparent;
-	left: 47vh;
-	top: 2vh;
-}
-
-/*square*/
-#b4{
-	width: 0;
-	height: 0;
-	border-bottom: 14.85vh solid;
-	border-bottom-color: #0E2CB3;
-	border-right: 14.85vh solid;
-	border-right-color: #0E2CB3;
-	/*width: 7.43vh;
-	height: 7.43vh;*/
-	left: 60vh;
-	top: 5vh;
-}
-
-/*parallelogram*/
-#b5 {
-    height: 9.75vh;
-    width: 20vh;
-    transform: skew(45deg);
-    background: #0E2CB3;
-    left: 82vh;
-	top: 8vh;
-}
-
-/*big triangle*/
-#b6 {
-	width: 0;
-	height: 0;
-	border-top: 21vh solid;
-	border-top-color: #0E2CB3;
-	border-right: 21vh solid transparent;
-	border-left: 21vh solid transparent;
-	left: 95vh;
-	top: 2vh;
-}
-
-/*medium triangle*/
-#b7 {
-	width: 0;
-	height: 0;
-	border-bottom: 14.85vh solid;
-	border-bottom-color: #0E2CB3;
-	border-right: 14.85vh solid transparent;
-	border-left: 14.85vh solid transparent;
-	left: 123vh;
-	top: 5vh;
-	margin-right: 10px;
+.bank-svg {
+	object-fit: cover;
+	height: calc(100% - 4px);
 }
 
 /*FORM*/
@@ -308,10 +185,6 @@
 	z-index: 3;
 }
 
-#sfinal {
-	display: none;
-}
-
 	</style>
 
 </head>
@@ -320,44 +193,63 @@
 	<div class="main-container">
 		<div class="menu-container">
 			<div class="menu-scroll">
-				<br>
-				<h1 id="date">Menu of the Week</h1>
+				<h1>Use Your Noodle</h1>
 
 				<h2>Appetizers</h2>
-				<a href='puzzle1.html' class="menu-item" id="a1" target="_blank">
+				<a class="menu-item" id="a1">
 					<h3>Cold Sesame Noodles</h3>
 					<p class="description">Sesame noodles with an amazing asian peanut sauce, topped with peanuts, scallions, and sesame seeds.</p>
 				</a>
-				<a href='puzzle2.html' class="menu-item" id="a2" target="_blank">
+				<a class="menu-item" id="a2">
 					<h3>Mini Lasagna Bites</h3>
 					<p class="description">Cheesy, saucy, addictive one-bite mini lasagna rolls ups, here and waiting for you.</p>
 				</a>
 
 				<h2>Mains</h2>
-				<a href='puzzle3.html' class="menu-item" id="a3" target="_blank">
+				<a class="menu-item" id="a3">
 					<h3>Cacio e Pepe</h3>
 					<p class="description">Literally "cheese and pepper", this minimalist cacio e pepe is like a stripped-down mac and cheese.</p>
 				</a>
-				<a href='puzzle4.html' class="menu-item" id="a4" target="_blank">
+				<a class="menu-item" id="a4">
 					<h3>Thai Peanut Chicken Ramen</h3>
 					<p class="description">All made in one pot, using healthy, pantry staple, ingredients. It's creamy, spicy, filled with veggies, lean chicken, and ramen noodles.</p>
 				</a>
-				<a href='puzzle5.html' class="menu-item" id="a5" target="_blank">
+				<a class="menu-item" id="a5">
 					<h3>Adam's Mac n' Cheese Chili</h3>
 					<p class="description">Adam invented this over the summer because he indulges himself.</p>
 				</a>
 
 				<h2>Desserts</h2>
-				<a href='puzzle6.html' class="menu-item" id="a6" target="_blank">
+				<a class="menu-item" id="a6">
 					<h3>Noodle Kugel</h3>
 					<p class="description">Kugel is a baked noodle pudding. It's a traditional Ashkenazi Jewish dish, often served on Shabbat and Yom Tov.</p>
 				</a>
-				<a href='puzzle7.html' class="menu-item" id="a7" target="_blank">
+				<a class="menu-item" id="a7">
 					<h3>Falooda</h3>
 					<p class="description">Falooda is a cold dessert with origins in the Indian subcontinent. Traditionally it is made from mixing rose syrup, vermicelli, sweet basil seeds with milk, often served with ice cream.</p>
 				</a>
 			</div>
 		</div>
+
+		<iframe class="puzzle-frame" id="if1" src="puzzle1f.html"></iframe>
+		<iframe class="puzzle-frame" id="if2" src="puzzle2f.html"></iframe>
+		<iframe class="puzzle-frame" id="if3" src="puzzle3f.html"></iframe>
+		<iframe class="puzzle-frame" id="if4" src="puzzle4f.html"></iframe>
+		<iframe class="puzzle-frame" id="if5" src="puzzle5f.html"></iframe>
+		<iframe class="puzzle-frame" id="if6" src="puzzle6f.html"></iframe>
+		<iframe class="puzzle-frame" id="if7" src="puzzle7f.html"></iframe>
+
+		<div class="about-container">
+			<div class="menu-scroll">
+				<h1>About this Webzine</h1><br>
+				<p>According to our trusted friend, <a href="https://en.wikipedia.org/wiki/Noodle">Wikipedia</a>, noodles are unleavened dough which is stretched, extruded, or rolled flat and cut into one of a variety of shapes which usually include long, thin strips, or waves, helices, tubes, strings, or shells, or folded over, or cut into other shapes. Noodles are usually cooked in boiling water, sometimes with cooking oil or salt added. They are often pan-fried or deep-fried. Noodles can be served with an accompanying sauce or in a soup.</p>
+				<p>Although noodles originated in China, they are a staple food in many cultures. From ramen, udon, and soba in Japan to japchae in Korea, from Vietnamese pho to pad thai in Thailand, from German spätzle to all the different types of pastas in Italy, a bowl of noodles can seem incredibly simple or beautifully complex.</p>
+				<p>No matter if they are mass produced and dried or carefully hand-made, cooking and eating noodles is an wonderfully joyful experience. Through this webzine, <i>Use Your Noodle,</i> I share easy noodle recipes from across the globe alongside puzzle solving, another source of amusement.</p>
+				<p>I hope visiters can enjoy both the puzzles and the recipes shared here. Only accessible when all puzzles are solved and all recipes revealed, the secret prize is waiting to be discovered...
+				</p>
+			</div>
+		</div>
+
 		<div class="input-container">
 			<form id="form" onsubmit="passwordSubmit(); return false;">
 				<h2 class="form-title">Secret Recipe:</h2>
@@ -367,24 +259,34 @@
 			
 		</div>
 		<div class="tangram">
-			<div id="t1"></div>
-			<div id="t2"></div>
-			<div id="t3"></div>
-			<div id="t4"></div>
-			<div id="t5"></div>
-			<div id="t6"></div>
-			<div id="t7"></div>	
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+			    <polygon class="tangram-poly" id="t1" points="29.19 985.5 500.98 515.13 970.88 985.5 29.19 985.5"/>
+			    <polygon class="tangram-poly" id="t2" points="514.15 500.5 737.5 277.37 737.5 723.62 514.15 500.5"/>
+			    <rect class="tangram-poly" id="t3" x="335.08" y="88.32" width="329.84" height="329.84" transform="translate(-32.71 427.46) rotate(-45)"/>
+			    <polygon class="tangram-poly" id="t4" points="29.16 15.5 475.84 15.5 252.5 238.62 29.16 15.5"/>
+			    <polygon class="tangram-poly" id="t5" points="757.5 743.37 757.5 276.61 985.5 504.38 985.5 971.6 757.5 743.37"/>
+			    <polygon class="tangram-poly" id="t6" points="15.5 30.15 486.35 501.47 15.5 970.91 15.5 30.15"/>
+			    <polygon class="tangram-poly" id="t7" points="524.66 15.5 985.5 15.5 985.5 475.88 524.66 15.5"/>
+			</svg>
 		</div>
 		<div class="bank-container">
 			<div class="bank-scroll">
-				<div id="b1"></div>
-				<div id="b2"></div>
-				<div id="b3"></div>
-				<div id="b4"></div>
-				<div id="b5"></div>
-				<div id="b6"></div>
-				<div id="b7"></div>			
+				<svg class="bank-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3500 555.56">
+				    <polygon class="bank-poly" id="b1" points="256.19 513.28 727.98 42.91 1197.88 513.28 256.19 513.28"/>
+				    <polygon class="bank-poly" id="b2" points="1015.15 265.27 1238.5 42.14 1238.5 488.4 1015.15 265.27"/>
+				    <rect class="bank-poly" id="b3" x="1283.08" y="102.1" width="329.84" height="329.84"/>
+				    <polygon class="bank-poly" id="b4" points="1659.34 147.43 1975.19 463.28 1659.5 463.12 1659.34 147.43"/>
+				    <polygon class="bank-poly" id="b5" points="1989.77 82.33 2319.83 412.39 1997.55 412.55 1667.17 82.17 1989.77 82.33"/>
+				    <polygon class="bank-poly" id="b6" points="2958.31 42.28 2486.99 513.13 2017.55 42.28 2958.31 42.28"/>
+				    <polygon class="bank-poly" id="b7" points="2618.38 440.6 2944.24 114.74 3269.78 440.28 2618.38 440.6"/>
+				</svg>		
 			</div>
+		</div>
+		<div id="back-button">
+			<p>←</p>
+		</div>
+		<div id="about-button">
+			<p>?</p>
 		</div>
 	</div>
 
@@ -422,13 +324,21 @@
 	<div class="solved" id="sfinal">
 		<div class="recipe-scroll">
 			<h1 class="recipe-name">Congratulations!</h1></a>
-			<p>I hope you enjoyed your meal!</p>
-			<img src="final1.png">
-			<p>Here is a reward for trying everything on the menu for Week 1. Come back every week for 3 more weeks to complete the puzzle!</p>
-			<a href="about.html">Read more about the Use Your Noodle zine here.</a>
+			<div class="congrats-text">
+				<br><p>I hope you enjoyed your meal!</p>
+				<br>
+				<p>As a reward for trying everything on the menu, I am inviting you to a homecooked meal, time and place TBD.</p>
+				<p>If you are interested, send your availibility to <a href="mailto:finalnoodle@useyournoodle.xyz?Subject=Final%20Noodle">finalnoodle@useyournoodle.xyz</a>.</p>
+				</div>
 			</div>
 		</div>
 	</div>
+
+	<div class="screen-warning">
+		<p>Please view this webzine on a larger screen.</p>
+	</div>
+
+	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
@@ -444,134 +354,121 @@
 
 		$(".form-box").val("");
 
+		var i;
+
 		if (text == "vinegar") {
-			$('#b1').css("border-bottom-color", "#ffd147");
-			$('#t1').css("border-bottom-color", "#0E2CB3");
+			i = 1;
 			c1 = 1;
-			console.log(c1+c2+c3+c4+c5+c6+c7)
+			// console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
 		if (text == "crosswise") {
-			$('#b2').css("border-top-color", "#ffd147");
-			$('#t2').css("border-top-color", "#0E2CB3");
+			i = 2;
 			c2 = 1;
-			console.log(c1+c2+c3+c4+c5+c6+c7)
+			// console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
 		if (text == "padano") {
-			$('#b3').css("border-right-color", "#ffd147");
-			$('#t3').css("border-right-color", "#0E2CB3");
+			i= 3;
 			c3 = 1;
-			console.log(c1+c2+c3+c4+c5+c6+c7)
+			// console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
 		if (text == "cremini") {
-			$('#b4').css("border-right-color", "#ffd147");
-			$('#t4').css("border-right-color", "#0E2CB3");
-			$('#b4').css("border-bottom-color", "#ffd147");
-			$('#t4').css("border-bottom-color", "#0E2CB3");
+			i = 4;
 			c4 = 1;
-			console.log(c1+c2+c3+c4+c5+c6+c7)
+			// console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
 		if (text == "seasoning") {
-			$('#b5').css("background", "#ffd147");
-			$('#t5').css("background", "#0E2CB3");
+			i = 5;
 			c5 = 1;
-			console.log(c1+c2+c3+c4+c5+c6+c7)
+			// console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
 		if (text == "cinnamon") {
-			$('#b6').css("border-top-color", "#ffd147");
-			$('#t6').css("border-top-color", "#0E2CB3");
+			i = 6;
 			c6 = 1;
-			console.log(c1+c2+c3+c4+c5+c6+c7)
+			// console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
 		if (text == "vermicelli") {
-			$('#b7').css("border-bottom-color", "#ffd147");
-			$('#t7').css("border-left-color", "#0E2CB3");
+			i = 7;
 			c7 = 1;
-			console.log(c1+c2+c3+c4+c5+c6+c7)
+			// console.log(c1+c2+c3+c4+c5+c6+c7)
 		}
+
+		$('#b' + i).css("fill", "none");
+		$('#t' + i).css("fill", "#0E2CB3");
 
 		setTimeout(function() {
             if (c1+c2+c3+c4+c5+c6+c7 == 7)
 			{
-				$('#sfinal').css('display', 'block');
+				$('.main-container').hide();
+				$('#sfinal').show();
 			}
         },
        	500);
 	}
 
+	//tangram bank starts with middle scroll
 	$(function(){
-		//tangram bank starts with middle scroll
-		$('.bank-scroll').scrollLeft(200);
+		
+		$('.bank-scroll').scrollLeft(175);
 	});
 
+	//iFrame links
+	$(function(){
+		$('.menu-item').each(function(index) {
+			$('#a' + (index+1)).click(function(){
+				console.log('menu item ' + (index+1));
+				$('.menu-container').hide();
+				$('#if' + (index+1)).show();
+			});
+		});
+	});
 
-// $(function(){
-	// var today = new Date();
-	// var dd = today.getDate();
+	//buttons
+	$('#back-button').click(function(){
+		console.log('back');
+		$('.puzzle-frame').each(function(index){
+			$('#if' + index).hide();
+		});
+		$('.about-container').hide();
+		$('.menu-container').show();
+	});
 
-	// var mm = today.getMonth()+1; 
-	// var yyyy = today.getFullYear();
-	// if(dd<10) 
-	// {
-	//     dd='0'+dd;
-	// } 
+	$('#about-button').click(function(){
+		console.log('about');
+		$('.puzzle-frame').each(function(index){
+			$('#if' + index).hide();
+		});
+		$('.menu-container').hide();
+		$('.about-container').show();
+	});
 
-	// if(mm<10) 
-	// {
-	//     mm='0'+mm;
-	// } 
-
-	// today = mm+'/'+dd+'/'+yyyy;
-	// console.log(today);
-	// $('#date').html('Menu for '+today);
-
-	
-
-	//doesn't work rn
-	// $('.menu-item').each(function(index) {
-	// 	$('#a' + index).hover(
-	// 		function(){
-	// 			console.log(index);
-	// 			if($('#b' + index).css("border-right-color") == "#0E2CB3") {
-	// 				console.log('right');
-	// 				$('#b' + index).css("border-right-color", "#ffd147");
-	// 			}
-	// 			if($('#b' + index).css("border-left-color") == "#0E2CB3") {
-	// 				console.log('left');
-	// 				$('#b' + index).css("border-left-color", "#ffd147");
-	// 			}
-	// 			if($('#b' + index).css("border-top-color") == "#0E2CB3") {
-	// 				console.log('top');
-	// 				$('#b' + index).css("border-top-color", "#ffd147");
-	// 			}
-	// 			if($('#b' + index).css("border-bottom-color") == "#0E2CB3") {
-	// 				console.log('bottom');
-	// 				$('#b' + index).css("border-bottom-color", "#ffd147");
-	// 			}
-	// 			if($('#b' + index).css("background") == "#0E2CB3") {
-	// 				console.log('background');
-	// 				$('#b' + index).css("background", "#ffd147");
-	// 			}
-				
-	// 		},
-	// 		function(){
-	// 			console.log(index + " 2");
-	// 			if($('#b' + index).css("border-right-color") == "#ffd147") {
-	// 				$('#b' + index).css("border-right-color", "#0E2CB3");
-	// 			}
-	// 			if($('#b' + index).css("border-left-color") == "#ffd147") {
-	// 				$('#b' + index).css("border-left-color", "#0E2CB3");
-	// 			}
-	// 			if($('#b' + index).css("border-top-color") == "#ffd147") {
-	// 				$('#b' + index).css("border-top-color", "#0E2CB3");
-	// 			}
-	// 			if($('#b' + index).css("border-bottom-color") == "#ffd147") {
-	// 				$('#b' + index).css("border-bottom-color", "#0E2CB3");
-	// 			}
-	// 			if($('#b' + index).css("background") == "#ffd147") {
-	// 				$('#b' + index).css("background", "#0E2CB3");
-	// 			}
-	// 	});
-	// });
+	//hover shapes
+	$('.menu-item').each(function(index) {
+		$('#a' + index).hover(
+			function(){
+				if($('#b' + index).css("fill") == "rgb(14, 44, 179)") {
+					// console.log('fill');
+					$('#b' + index).css("fill", "#ffd147");
+					$('#b' + index).css("stroke", "#ffd147");
+				}
+				else if($('#b' + index).css("fill") == "none") {
+					// console.log('fill');
+					$('#t' + index).css("fill", "#ffd147");
+					$('#t' + index).css("stroke", "#ffd147");
+				}
+			},
+			function(){
+				if($('#b' + index).css("fill") == "rgb(255, 209, 71)") {
+					// console.log('fill');
+					$('#b' + index).css("fill", "#0E2CB3");
+					$('#b' + index).css("stroke", "#0E2CB3");
+				}
+				else if($('#b' + index).css("fill") == "none") {
+					// console.log('fill');
+					$('#t' + index).css("fill", "#0E2CB3");
+					$('#t' + index).css("stroke", "#0E2CB3");
+				}
+		});
+	});
 // });
 	</script>
 
