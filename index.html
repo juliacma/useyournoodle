@@ -424,7 +424,7 @@
 	$('#back-button').click(function(){
 		console.log('back');
 		$('.puzzle-frame').each(function(index){
-			$('#if' + index).hide();
+			$('#if' + (index+1)).hide();
 		});
 		$('.about-container').hide();
 		$('.menu-container').show();
@@ -433,7 +433,7 @@
 	$('#about-button').click(function(){
 		console.log('about');
 		$('.puzzle-frame').each(function(index){
-			$('#if' + index).hide();
+			$('#if' + (index+1)).hide();
 		});
 		$('.menu-container').hide();
 		$('.about-container').show();
