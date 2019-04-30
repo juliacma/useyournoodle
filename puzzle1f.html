@@ -61,7 +61,10 @@ h3 {
 	</div>
 	<div class="puzzle-container">
 		<div class="grid five">
-			<a href="https://www.puzzle-nonograms.com/faq.php" target="_blank"><div class="empty">How to Play</div></a>
+			<div class="empty">
+				<a href="https://www.puzzle-nonograms.com/faq.php" target="_blank">How to Play</a><br>
+				<a id="reset">Reset Grid</a>
+			</div>
 
 			<div class="top-numbers" id="top0">1<br>1<br>1</div>
 			<div class="top-numbers" id="top1">1<br>1</div>
@@ -142,6 +145,12 @@ $(function(){
 				grid[index] = 0;
 			}
 
+			$('#reset').click(function(){
+				$('#' + index).css('background-color', 'white');
+				$('#' + index).html('');
+				grid[index] = 0;
+			});
+
 			setTimeout(function() {
                 if (match(grid, solution))
 				{
@@ -152,6 +161,8 @@ $(function(){
 		});
 
 	});
+
+	
 
 	// function adapted from https://stackoverflow.com/questions/4025893/how-to-check-identical-array-in-most-efficient-way/4025958
 	function match(arr1, arr2) {
