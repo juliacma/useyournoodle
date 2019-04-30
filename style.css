@@ -10,14 +10,6 @@
 
 }
 
-@font-face {
-    font-family: "blitzscript_outline";
-    src: url('fonts/blitz_script_outline-webfont.otf') format('otf'),
-    	 url('fonts/blitz_script_outline-webfont.woff2') format('woff2'),
-         url('fonts/blitz_script_outline-webfont.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-
 }
 
 html, body {
@@ -254,10 +246,6 @@ li {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/*border-right: 1px solid #ffd147;*/
-	border-bottom: 1px solid #ffd147;
-	/*width: calc(110vh + 2px);*/
-	/*height: calc(90vh + 4px);*/
 	height: calc(100vh - 1px);
 	/*margin: 4.5vh auto 0;*/
 }
